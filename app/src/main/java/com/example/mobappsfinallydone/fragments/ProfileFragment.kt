@@ -30,7 +30,6 @@ class ProfileFragment:Fragment(R.layout.profile_fragment) {
         layout1 = view.findViewById(R.id.layout1)
         mAuth = FirebaseAuth.getInstance()
         val navController = Navigation.findNavController(view)
-//        val visible = ProfileFragmentArgs.fromBundle(requireArguments()).action
         loginButton2 = view.findViewById(R.id.loginButton2)
         loginButton2.setOnClickListener {
             val toLogin = ProfileFragmentDirections.actionProfileFragmentToLoginFragment()
@@ -47,14 +46,14 @@ class ProfileFragment:Fragment(R.layout.profile_fragment) {
                 Glide.with(this).load(eTPhoto.text).into(profileIV)
             }
         }
-//        if (){
-//            layout1.visibility = View.VISIBLE
-//            loginButton2.visibility = View.GONE
-//        }
-//        else{
-//            layout1.visibility = View.INVISIBLE
-//            loginButton2.visibility = View.VISIBLE
-//
-//        }
+        if (FirebaseAuth.getInstance().currentUser?.isEmailVerified!!) {
+            layout1.visibility = View.VISIBLE
+            loginButton2.visibility = View.GONE
+        }
+        else{
+            layout1.visibility = View.INVISIBLE
+            loginButton2.visibility = View.VISIBLE
+
+        }
     }
 }

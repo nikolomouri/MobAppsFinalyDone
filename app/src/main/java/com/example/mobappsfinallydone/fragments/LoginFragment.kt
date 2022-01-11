@@ -44,9 +44,8 @@ class LoginFragment:Fragment(R.layout.login_fragment) {
                 mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful){
-                            val action = 1
-                            val visible = LoginFragmentDirections.actionLoginFragmentToProfileFragment(action)
-                            navController.navigate(visible)
+                            Toast.makeText(this.context,"successfully log in", Toast.LENGTH_SHORT).show()
+                            navController.navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment())
                         }else {
                             Toast.makeText(this.context, "incorect email or password" , Toast.LENGTH_SHORT).show()
                         }

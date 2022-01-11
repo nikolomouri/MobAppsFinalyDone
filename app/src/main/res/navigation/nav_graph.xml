@@ -43,9 +43,6 @@
         <action
             android:id="@+id/action_profileFragment_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
-        <argument
-            android:name="action"
-            app:argType="integer"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
