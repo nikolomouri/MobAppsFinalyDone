@@ -28,23 +28,17 @@
 
             <ImageView
                 android:id="@+id/profileIV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_marginBottom="15dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <EditText
-                android:id="@+id/eTPhoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:hint="Photo url" />
-
             <Button
-                android:id="@+id/changeProfileImageButton"
+                android:id="@+id/logOutButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Change profile photo" />
+                android:text="Log out" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -58,7 +52,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:text=""
                 android:textSize="20dp" />
 
             <TextView
@@ -66,7 +59,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:text=""
                 android:textSize="20dp" />
 
             <LinearLayout
@@ -76,10 +68,16 @@
                 android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/changeProfileInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Change profile info" />
+
+                <Button
                     android:id="@+id/changePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Change password" />
+                    android:text="change password" />
             </LinearLayout>
 
         </LinearLayout>

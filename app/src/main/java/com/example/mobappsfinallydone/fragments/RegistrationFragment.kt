@@ -8,7 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.mobappsfinallydone.R
+import com.example.mobappsfinallydone.database.UserID
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class RegistrationFragment:Fragment(R.layout.registration_fragment) {
@@ -19,23 +22,17 @@ class RegistrationFragment:Fragment(R.layout.registration_fragment) {
     private lateinit var registrationButton2:Button
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        eTName = view.findViewById(R.id.eTName)
-        eTName2 = view.findViewById(R.id.eTName2)
         eTEmail3 = view.findViewById(R.id.eTEmail3)
         eTPassword3 = view.findViewById(R.id.eTPassword3)
         registrationButton2 = view.findViewById(R.id.registrationButton2)
-
         registrationButton2.setOnClickListener {
-            val name = eTName.text.toString()
-            val secondName = eTName2.text.toString()
             val email = eTEmail3.text.toString()
             val password = eTPassword3.text.toString()
-            if (name.isEmpty() || secondName.isEmpty() || email.isEmpty() || password.isEmpty()){
+            if ( email.isEmpty() || password.isEmpty()){
                 Toast.makeText(this.context, "Fields are empty",Toast.LENGTH_SHORT).show()
-            }else if ( password.length < 8 || name.length < 3 || secondName.length < 4) {
+            }else if ( password.length < 8) {
                 Toast.makeText(this.context, "Fields are incorrectly filled", Toast.LENGTH_SHORT).show()
-            }else if (password.contains("[0-9]".toRegex()) && password.contains("[a-z]".toRegex()) && password.contains("[A-Z]".toRegex())
-                && name.contains("[a-z]".toRegex()) && secondName.contains("[a-z]".toRegex())){
+            }else if (password.contains("[0-9]".toRegex()) && password.contains("[a-z]".toRegex()) && password.contains("[A-Z]".toRegex())){
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                     if (task.isSuccessful){
                         Toast.makeText(this.context,"successfully registered",Toast.LENGTH_SHORT).show()
