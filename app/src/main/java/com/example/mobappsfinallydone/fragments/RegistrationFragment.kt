@@ -15,13 +15,13 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class RegistrationFragment:Fragment(R.layout.registration_fragment) {
-    private lateinit var eTName:EditText
-    private lateinit var eTName2:EditText
     private lateinit var eTEmail3:EditText
     private lateinit var eTPassword3:EditText
     private lateinit var registrationButton2:Button
+    private lateinit var backButton3: Button
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        backButton3 = view.findViewById(R.id.backButton3)
         eTEmail3 = view.findViewById(R.id.eTEmail3)
         eTPassword3 = view.findViewById(R.id.eTPassword3)
         registrationButton2 = view.findViewById(R.id.registrationButton2)
@@ -44,6 +44,9 @@ class RegistrationFragment:Fragment(R.layout.registration_fragment) {
             }else{
                 Toast.makeText(this.context,"password must contain numbers, and english symbols lower and upper case ,name and second name must be only with english symbols.",Toast.LENGTH_LONG).show()
             }
+        }
+        backButton3.setOnClickListener {
+            Navigation.findNavController(view).navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment())
         }
     }
 }

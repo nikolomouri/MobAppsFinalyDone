@@ -24,12 +24,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/profileIV"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="400px"
+                android:layout_height="400px"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 tools:srcCompat="@tools:sample/avatars" />
 

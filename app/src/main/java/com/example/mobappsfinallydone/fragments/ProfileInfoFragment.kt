@@ -21,6 +21,7 @@ class ProfileInfoFragment:Fragment(R.layout.profile_info_fragment) {
     private lateinit var backButton:Button
     private lateinit var db : DatabaseReference
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var eTAdress : EditText
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         eTName1 = view.findViewById(R.id.eTName1)
@@ -28,14 +29,16 @@ class ProfileInfoFragment:Fragment(R.layout.profile_info_fragment) {
         eTImageURL = view.findViewById(R.id.eTImageURL)
         saveButton = view.findViewById(R.id.saveButton)
         backButton = view.findViewById(R.id.backButton)
+        eTAdress = view.findViewById(R.id.eTAdress)
         mAuth = FirebaseAuth.getInstance()
         db = FirebaseDatabase.getInstance().getReference("UserInfo")
         saveButton.setOnClickListener {
             val name = eTName1.text.toString()
             val secondName = eTName2.text.toString()
             val imageUrl = eTImageURL.text.toString()
-            val personInfo = UserID(name,secondName,imageUrl)
-            if (name.isEmpty()||secondName.isEmpty() || imageUrl.isEmpty()){
+            val adress = eTAdress.text.toString()
+            val personInfo = UserID(name,secondName,imageUrl,adress)
+            if (name.isEmpty()||secondName.isEmpty()){
                 Toast.makeText(this.context ,"The field is empty, if u want to change photo put url in it." ,Toast.LENGTH_LONG).show()
             }else {
                 if (mAuth.currentUser?.uid != null) {
@@ -45,6 +48,7 @@ class ProfileInfoFragment:Fragment(R.layout.profile_info_fragment) {
                             eTName1.text = null
                             eTName2.text = null
                             eTImageURL.text = null
+                            eTAdress.text = null
                         }else{
                             Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                         }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
@@ -10,15 +11,21 @@
         android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_notificationFragment"
-            app:destination="@id/notificationFragment" />
+            app:destination="@id/cartFragment" />
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/notificationFragment"
-        android:name="com.example.mobappsfinallydone.fragments.NotificationFragment"
-        android:label="NotificationFragment" >
+        android:id="@+id/cartFragment"
+        android:name="com.example.mobappsfinallydone.fragments.CartFragment"
+        android:label="CartFragment">
         <action
             android:id="@+id/action_notificationFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -36,7 +43,7 @@
         </action>
         <action
             android:id="@+id/action_profileFragment_to_notificationFragment"
-            app:destination="@id/notificationFragment" />
+            app:destination="@id/cartFragment" />
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -96,5 +103,29 @@
         <action
             android:id="@+id/action_profileInfoFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.mobappsfinallydone.fragments.HomeFragment2"
+        android:label="HomeFragment2" >
+        <action
+            android:id="@+id/action_homeFragment2_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment3"
+        android:name="com.example.mobappsfinallydone.fragments.HomeFragment3"
+        android:label="HomeFragment3" >
+        <action
+            android:id="@+id/action_homeFragment3_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragmentMain"
+        android:name="com.example.mobappsfinallydone.fragments.HomeFragmentMain"
+        android:label="HomeFragmentMain" >
+        <action
+            android:id="@+id/action_homeFragmentMain_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

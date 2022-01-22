@@ -20,7 +20,11 @@ class HomeFragment:Fragment(R.layout.home_fragment) {    private lateinit var vi
         viewPagerAdapter = ViewPagerAdapterFragments(this.context as FragmentActivity)
         viewPager2.adapter = viewPagerAdapter
         TabLayoutMediator(tabLayout, viewPager2){tab, position->
-            tab.text = "tab ${position + 1}"
+            when(position){
+                0->tab.text = "GTX 10th series"
+                1->tab.text = "RTX 20th series"
+                2->tab.text = "RTX 30th series"
+            }
         }.attach()
     }
 }

@@ -16,12 +16,16 @@ class ChangePasswordFragment:Fragment(R.layout.change_password_fragment) {
     private lateinit var eTNewPassword1:EditText
     private lateinit var eTNewPassword2:EditText
     private lateinit var acceptButton:Button
-
+    private lateinit var backButton4: Button
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        backButton4 = view.findViewById(R.id.backButton4)
         eTNewPassword1 = view.findViewById(R.id.eTNewPassword1)
         eTNewPassword2 = view.findViewById(R.id.eTNewPassword2)
         acceptButton = view.findViewById(R.id.acceptButton)
+        backButton4.setOnClickListener {
+            Navigation.findNavController(view).navigate(ChangePasswordFragmentDirections.actionChangePasswordFragmentToProfileFragment())
+        }
         acceptButton.setOnClickListener {
             val password1 = eTNewPassword1.text.toString()
             val password2 = eTNewPassword2.text.toString()

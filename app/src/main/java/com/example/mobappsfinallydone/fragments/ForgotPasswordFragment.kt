@@ -13,10 +13,15 @@ import com.google.firebase.auth.FirebaseAuth
 class ForgotPasswordFragment:Fragment(R.layout.forgort_password_fragment) {
     private lateinit var eTEmail2:EditText
     private lateinit var forgetPasswordButton2:Button
+    private lateinit var backButton2: Button
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         eTEmail2 = view.findViewById(R.id.eTEmail2)
+        backButton2 =view.findViewById(R.id.backButton2)
         forgetPasswordButton2 = view.findViewById(R.id.forgetPasswordButton2)
+        backButton2.setOnClickListener {
+            Navigation.findNavController(view).navigate(ForgotPasswordFragmentDirections.actionForgotPasswordFragmentToLoginFragment())
+        }
         forgetPasswordButton2.setOnClickListener {
             val email = eTEmail2.text.toString()
             if (email.isEmpty()){

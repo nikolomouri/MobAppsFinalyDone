@@ -1,9 +1,13 @@
 package com.example.mobappsfinallydone.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
@@ -53,10 +57,16 @@ class ProfileFragment:Fragment(R.layout.profile_fragment) {
 
         if (mAuth.currentUser?.uid  != null) {
             db.child(mAuth.currentUser?.uid!!).addValueEventListener(object : ValueEventListener{
+                @SuppressLint("UseRequireInsteadOfGet")
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val userId = snapshot.getValue(UserID::class.java)
                     if (userId != null) {
-                        Glide.with(this@ProfileFragment).load(userId.imageURL).into(profileIV)
+                        activity?.let {
+                            Glide
+                                .with(it)
+                                .load(userId.imageURL)
+                                .into(profileIV)
+                        }
                         tVName.text = userId.name
                         tVSecondName.text = userId.secondName
                        }
