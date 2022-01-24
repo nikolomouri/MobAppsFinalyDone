@@ -42,6 +42,7 @@ class HomeFragmentMain:Fragment(R.layout.home_fragment_main) {
     private lateinit var addCartButton3:Button
     private lateinit var addCartButton4:Button
     private lateinit var addCartButton5:Button
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         iVProduct1 = view.findViewById(R.id.iVProduct1)
@@ -80,6 +81,7 @@ class HomeFragmentMain:Fragment(R.layout.home_fragment_main) {
         tVPrice2.text = GTX1080TI().price
         tVPrice3.text = GTX1650().price
         tVPrice4.text = GTX1660().price
+
         this.context?.let {
             Glide.with(it).load(GTX1080().image).into(iVProduct1)
             Glide.with(it).load(GTX1080TI().image).into(iVProduct2)
@@ -99,6 +101,19 @@ class HomeFragmentMain:Fragment(R.layout.home_fragment_main) {
                 buyButton5.setOnClickListener {
                     this.context?.let {it2-> MyDialog2(it2).show() }
                 }
+                addCartButton2.setOnClickListener {
+                    Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToCartFragment().setProductID(1))
+                }
+                addCartButton3.setOnClickListener {
+                    Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToCartFragment().setProductID(2))
+                }
+                addCartButton4.setOnClickListener {
+                    Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToCartFragment().setProductID(3))
+                }
+                addCartButton5.setOnClickListener {
+                    Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToCartFragment().setProductID(4))
+                }
+
             }else{
                 buyButton2.setOnClickListener {
                     this.context?.let { it1 -> MyDialog(it1).show() }

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/cart_fragment.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/change_password_fragment.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/dialog.xml" value="0.3536458333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/dialog2.xml" value="0.3536458333333333" />
@@ -16,7 +17,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/login_fragment.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/notification_fragment.xml" value="0.3536458333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/product_fragment.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/profile_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/profile_fragment.xml" value="0.2611464968152866" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/profile_info_fragment.xml" value="0.1910828025477707" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/layout/registration_fragment.xml" value="0.3536458333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Mobappsfinallydone/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3536458333333333" />

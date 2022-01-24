@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    android:background="#DBE0F4C9"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/verticalLayout1"
@@ -22,17 +22,17 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight="1"
             app:defaultNavHost="false"
             app:navGraph="@navigation/nav_graph"
-            tools:ignore="FragmentTagUsage"
-            android:layout_weight="1"
-            />
+            tools:ignore="FragmentTagUsage" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationMenu"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:menu="@menu/bottom_navigation_menu"/>
+            android:background="#F2FFCA"
+            app:menu="@menu/bottom_navigation_menu" />
 
     </LinearLayout>
 

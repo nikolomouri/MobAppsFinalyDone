@@ -11,7 +11,10 @@ import com.bumptech.glide.Glide
 import com.example.mobappsfinallydone.MyDialog
 import com.example.mobappsfinallydone.MyDialog2
 import com.example.mobappsfinallydone.R
-import com.example.mobappsfinallydone.database.*
+import com.example.mobappsfinallydone.database.RTX2060
+import com.example.mobappsfinallydone.database.RTX2070
+import com.example.mobappsfinallydone.database.RTX2080
+import com.example.mobappsfinallydone.database.RTX2080TI
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment2:Fragment(R.layout.home_fragment_2) {
@@ -95,6 +98,18 @@ class HomeFragment2:Fragment(R.layout.home_fragment_2) {
                 }
                 buyButton9.setOnClickListener {
                     this.context?.let { it2 -> MyDialog2(it2).show() }
+                }
+                addCartButton6.setOnClickListener {
+                    Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToCartFragment().setProductID(5))
+                }
+                addCartButton7.setOnClickListener {
+                    Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToCartFragment().setProductID(6))
+                }
+                addCartButton8.setOnClickListener {
+                    Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToCartFragment().setProductID(7))
+                }
+                addCartButton9.setOnClickListener {
+                    Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToCartFragment().setProductID(8))
                 }
             } else {
                 buyButton6.setOnClickListener {
