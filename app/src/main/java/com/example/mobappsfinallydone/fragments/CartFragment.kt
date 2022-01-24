@@ -6,7 +6,9 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
+import com.example.mobappsfinallydone.MyDialog2
 import com.example.mobappsfinallydone.R
 import com.example.mobappsfinallydone.database.*
 
@@ -107,6 +109,18 @@ class CartFragment:Fragment(R.layout.cart_fragment) {
             view.findViewById<TextView>(R.id.tVPrice24).text = RTX2080TI().price
             Glide.with(view).load(RTX2080TI().image).into(view.findViewById(R.id.iVProduct24))
             view.findViewById<Button>(R.id.cartBuyButton3).visibility= View.VISIBLE
+        }
+        view.findViewById<Button>(R.id.cartBuyButton1).setOnClickListener {
+            this.context?.let {it2-> MyDialog2(it2).show() }
+            Navigation.findNavController(view).navigate(CartFragmentDirections.actionNotificationFragmentToHomeFragment())
+        }
+        view.findViewById<Button>(R.id.cartBuyButton2).setOnClickListener {
+            this.context?.let {it2-> MyDialog2(it2).show() }
+            Navigation.findNavController(view).navigate(CartFragmentDirections.actionNotificationFragmentToHomeFragment())
+        }
+        view.findViewById<Button>(R.id.cartBuyButton3).setOnClickListener {
+            this.context?.let {it2-> MyDialog2(it2).show() }
+            Navigation.findNavController(view).navigate(CartFragmentDirections.actionNotificationFragmentToHomeFragment())
         }
     }
 }
