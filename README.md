@@ -1,10 +1,8 @@
-ეს აპლიკაცია წარმოადგენს ონლაინ მაღაზიას ,ხოლო პროდუქტია არის ვიდეო ბარათები.მომხმარებელთა სეგმენტი იქნება, როგორც მაინერების მოყვარულები, ასევე გეიმერები.
-მომხმარებლებს შეეძლებათ იყიდონ ნებისმიერი ვიდეო ბარათი. ადგილზე მიტანის სერვისით.
-აპლიკაციაში შესვლა შეგიძლია რეგისტრაციის გარეშე რომ დაათვალიერო.
-შემდგომი მისი გამოყენება შეიძლება მხოლოდ რეგისტრაციის გავლისა და აუტენტიფიკაციის შემდგომ.
-აპლიკაცია შედგება ნავიგაციის კომპონენტისგან, ფრაგმენტებისგან და ტაბებისგან. გამოყენებული single activity architecture.
-ნავიგაციის მენიუ არის დაყოფილი სამ ნაწილად: Home, Cart და profile.
-Home-ში გამოყენებულია viewPager2 და წარმოქმნის 3 ტაბს.
-ამ ტაბებზე განაწილებულია პროდუქცია კლასიფიკაციის მიხედვით.
-ხოლო არჩეულ პროდუქციაზე კალათაში ჩამატებით გადაყავხარ კალათის გვერდზე და ნაჩვენებია ეს პროდუქტი და ყიდვის ღილაკი რომელიც ადასტურებს ყიდვას და გადაყავხარ მთახარ გვერდზე სადაც ეს პროდუქციაა ნაჩვენები.
-პროფილის გვერდი წარმოადგენს ხეს, სადაც აწყობილია აუთენტიფიკაციის, რეგისტრციის, პაროლის შეცვლის, პაროლის დარესეტების და პროფილის ინფორმაციის შეყვანის გვერდები.
+This application is an online store, and the product is video cards. The consumer segment will be both miners and gamers.
+Users can buy any video card online and use delivery service. You can log in to view the application without registering.
+It can be used further only after registration and authentication.
+The app consists of a navigation component, snippets, and tabs. Used single activity architecture.
+The navigation menu is divided into three parts: Home, Cart and profile. Home uses viewPager2 and generates 3 tabs.
+Products are classified according to these tabs.
+By adding the selected products to the cart, you will be taken to the cart page and this product and the purchase button that confirms the purchase will be displayed and you will be taken to the main page where these products are displayed.
+A profile page is a tree containing pages for authentication, registration, password change, password reset, and profile information entry.
